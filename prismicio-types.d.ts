@@ -47,13 +47,48 @@ type ContentRelationshipFieldWithData<
 }[Exclude<TCustomType[number], string>["id"]];
 
 /**
+ * Primary content in *Hero → Default → Primary*
+ */
+export interface HeroSliceDefaultPrimary {
+	/**
+	 * First Name field in *Hero → Default → Primary*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: hero.default.primary.first_name
+	 * - **Documentation**: https://prismic.io/docs/fields/text
+	 */
+	first_name: prismic.KeyTextField;
+	
+	/**
+	 * Last Name field in *Hero → Default → Primary*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: hero.default.primary.last_name
+	 * - **Documentation**: https://prismic.io/docs/fields/text
+	 */
+	last_name: prismic.KeyTextField;
+	
+	/**
+	 * Tag Line field in *Hero → Default → Primary*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: hero.default.primary.tag_line
+	 * - **Documentation**: https://prismic.io/docs/fields/text
+	 */
+	tag_line: prismic.KeyTextField;
+}
+
+/**
  * Default variation for Hero Slice
  *
  * - **API ID**: `default`
  * - **Description**: Default
  * - **Documentation**: https://prismic.io/docs/slices
  */
-export type HeroSliceDefault = prismic.SharedSliceVariation<"default", Record<string, never>, never>;
+export type HeroSliceDefault = prismic.SharedSliceVariation<"default", Simplify<HeroSliceDefaultPrimary>, never>;
 
 /**
  * Slice variation for *Hero*
@@ -85,6 +120,7 @@ declare module "@prismicio/client" {
 	namespace Content {
 		export type {
 			HeroSlice,
+			HeroSliceDefaultPrimary,
 			HeroSliceVariation,
 			HeroSliceDefault
 		}
