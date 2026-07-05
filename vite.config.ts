@@ -4,7 +4,7 @@ import { defineConfig } from "vite";
 
 export default defineConfig({
   ssr: {
-    noExternal: ["three"],
+    noExternal: ["three", "@threlte/core", "@threlte/extras", "gsap"],
   },
   plugins: [
     sveltekit({

@@ -1,2 +1,9 @@
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://svelte.dev/docs/kit">svelte.dev/docs/kit</a> to read the documentation</p>
+<script lang="ts">
+  import { SliceZone, SliceSimulator } from "@prismicio/svelte";
+  import { components } from "$lib/slices";
+</script>
+
+<!-- Passando o children diretamente como propriedade do componente -->
+<SliceSimulator
+  children={(props) => SliceZone({ slices: props.slices, components })}
+/>
