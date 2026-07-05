@@ -1,9 +1,9 @@
 <script lang="ts">
-  import type { Content } from "@prismicio/client";
+  import type { HeroSlice } from "../../../../prismicio-types";
   import type { SliceComponentProps } from "@prismicio/svelte";
   import Scene from "./Scene.svelte";
 
-  type Props = SliceComponentProps<Content.HeroSlice>;
+  type Props = SliceComponentProps<HeroSlice>;
 
   const { slice }: Props = $props();
 </script>
