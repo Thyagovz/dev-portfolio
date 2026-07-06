@@ -1,6 +1,10 @@
 <script lang="ts">
-  import type { Content } from "@prismicio/client";
+  import { isFilled, type Content } from "@prismicio/client";
   import NavBarLink from "./NavBarLink.svelte";
+  import Button from "./Button.svelte";
+
+  import IconMenu from "~icons/ic/baseline-menu";
+  import IconClose from "~icons/ic/baseline-close";
 
   let { settings }: { settings: Content.SettingsDocument } = $props();
 
@@ -29,7 +33,7 @@
           class="block p-2 text-2xl text-slate-800 md:hidden"
           onclick={() => (open = true)}
         >
-          OPEN
+          <IconMenu />
         </button>
       </div>
       <!-- Mobile Nav -->
@@ -43,7 +47,7 @@
             class="fixed right-4 top-3 block p-2 text-2xl text-slate-800 md:hidden"
             onclick={() => (open = false)}
           >
-            CLOSE
+            <IconClose />
           </button>
         </li>
         {#each settings.data.nav_item as { label, link }}
@@ -56,6 +60,12 @@
             />
           </li>
         {/each}
+        {#if isFilled.link(settings.data.cta)}
+          <Button
+            linkField={settings.data.cta}
+            label={settings.data.cta_label}
+          />
+        {/if}
       </ul>
 
       <!-- Desktop Nav -->
@@ -73,6 +83,13 @@
             />
           </li>
         {/each}
+        {#if isFilled.link(settings.data.cta)}
+          <Button
+            linkField={settings.data.cta}
+            label={settings.data.cta_label}
+            class="ml-3"
+          />
+        {/if}
       </ul>
     </div>
   </nav>
