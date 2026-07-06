@@ -4,8 +4,7 @@
   import * as THREE from "three";
   import gsap from "gsap";
   import { elasticOut } from "svelte/easing";
-  import { Object3D } from "three";
-  
+
   let {
     position = [0, 0, 0] as [number, number, number],
     geometry = new THREE.IcosahedronGeometry(3),
@@ -16,7 +15,13 @@
     rate?: number;
   } = $props();
 
-  let visible = $state(false); 
+  const soundEffects = [
+    new Audio("/sounds/hit1.ogg"),
+    new Audio("/sounds/hit2.ogg"),
+    new Audio("/sounds/hit3.ogg"),
+  ];
+
+  let visible = $state(false);
 
   const materialParams = [
     { color: 0x2ecc71, roughness: 0 },
@@ -33,6 +38,7 @@
   }
 
   function handleClick(event: MouseEvent) {
+    gsap.utils.random(soundEffects).play();
     if ("object" in event && event.object instanceof THREE.Mesh) {
       gsap.to(event.object.rotation, {
         x: `+=${gsap.utils.random(0, 3)}`,
@@ -47,18 +53,17 @@
     }
   }
 
-  const bounce = createTransition((ref) => { 
-    return { 
-      tick(t) { 
-        if (t > 0) visible = true; 
-        ref.scale.setScalar(t); 
-      }, 
-      easing: elasticOut, 
-      duration: gsap.utils.random(800, 1200), 
-      delay: gsap.utils.random(0, 500), 
-    }; 
+  const bounce = createTransition((ref) => {
+    return {
+      tick(t) {
+        if (t > 0) visible = true;
+        ref.scale.setScalar(t);
+      },
+      easing: elasticOut,
+      duration: gsap.utils.random(800, 1200),
+      delay: gsap.utils.random(0, 500),
+    };
   });
-  
 </script>
 
 <Threlte.Group

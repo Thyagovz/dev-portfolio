@@ -1,4 +1,14 @@
 {
   "repositoryName": "3d-portfolio-svelt",
-  "routes": []
+  "routes": [
+    {
+      "type": "page",
+      "path": "/:uid"
+    },
+    {
+      "type": "page",
+      "uid": "home",
+      "path": "/"
+    }
+  ]
 }
