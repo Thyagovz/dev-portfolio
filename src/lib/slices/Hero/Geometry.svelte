@@ -4,6 +4,7 @@
   import * as THREE from "three";
   import gsap from "gsap";
   import { elasticOut } from "svelte/easing";
+  import { isInstanceOf } from "@threlte/core";
 
   let {
     position = [0, 0, 0] as [number, number, number],
@@ -23,15 +24,15 @@
 
   let visible = $state(false);
 
-  const materialParams = [
-    { color: 0x2ecc71, roughness: 0 },
-    { color: 0xf1c40f, roughness: 0.4 },
-    { color: 0xe74c3c, roughness: 0.1 },
-    { color: 0x8e44ad, roughness: 0.1 },
-    { color: 0x1abc9c, roughness: 0.1 },
-    { color: 0x2980b9, roughness: 0, metalness: 0.5 },
-    { color: 0x2c3e50, roughness: 0.1, metalness: 0.5 },
-  ];
+const materialParams = [
+  { color: 0x2ecc71, roughness: 0, metalness: 1 },
+  { color: 0xf1c40f, roughness: 0, metalness: 1 }, 
+  { color: 0xe74c3c, roughness: 0, metalness: 1 }, 
+  { color: 0x8e44ad, roughness: 0, metalness: 1 }, 
+  { color: 0x1abc9c, roughness: 0, metalness: 1 },
+  { color: 0x2980b9, roughness: 0, metalness: 1 }, 
+  { color: 0x2c3e50, roughness: 0, metalness: 1 } 
+];
 
   function getRandomMaterial() {
     return new THREE.MeshStandardMaterial(gsap.utils.random(materialParams));
@@ -54,6 +55,8 @@
   }
 
   const bounce = createTransition((ref) => {
+    if (!isInstanceOf(ref, "Mesh")) return;
+
     return {
       tick(t) {
         if (t > 0) visible = true;

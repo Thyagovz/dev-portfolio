@@ -4,10 +4,10 @@
   import { page } from "$app/state";
   import * as prismic from "@prismicio/client";
   import Footer from "$lib/components/Footer.svelte";
+  import Header from "$lib/components/Header.svelte";
+  import type { LayoutData } from "./$types";
 
-  
-
-  let { children , data } = $props();
+  let { children, data }: { children: any; data: LayoutData } = $props();
 
   let titleText = $derived(
     page.data?.page?.data?.meta_title || "Thyago Euclides | Portfolio",
@@ -26,7 +26,7 @@
   {/if}
 </svelte:head>
 
-<header>Header</header>
+<Header settings={data.settings} />
 
 <main></main>
 
