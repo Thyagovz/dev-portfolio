@@ -82,7 +82,7 @@
                 >
               {/each}
             </span>
-            <span class="block text-slate-500 mt-[.02em]">
+            <span class="block text-slate-500 mt-[.03em]">
               {#each last_name_letters as letter}
                 <span class="name-animation inline-block opacity-100"
                   >{letter}</span

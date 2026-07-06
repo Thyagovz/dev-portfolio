@@ -27,15 +27,15 @@
     "SEO & Metadata": {
       "meta_title": {
         "config": {
-          "label": "Meta Title",
-          "placeholder": "A title of the page used for social media and search engines"
+          "label": "Thyago's portfolio",
+          "placeholder": "Portfólio de Thyago Euclides"
         },
         "type": "Text"
       },
       "meta_description": {
         "config": {
           "label": "Meta Description",
-          "placeholder": "A brief summary of the page"
+          "placeholder": "Conheça o portfólio de Thyago. Soluções digitais sob medida, desenvolvimento de sites e sistemas."
         },
         "type": "Text"
       },
