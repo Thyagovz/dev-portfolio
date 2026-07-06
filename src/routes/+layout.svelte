@@ -3,8 +3,11 @@
   import "@fontsource-variable/urbanist";
   import { page } from "$app/state";
   import * as prismic from "@prismicio/client";
+  import Footer from "$lib/components/Footer.svelte";
 
-  let { children } = $props();
+  
+
+  let { children , data } = $props();
 
   let titleText = $derived(
     page.data?.page?.data?.meta_title || "Thyago Euclides | Portfolio",
@@ -33,4 +36,4 @@
 ></div>
 
 {@render children()}
-<footer>Footer</footer>
+<Footer settings={data.settings} />
