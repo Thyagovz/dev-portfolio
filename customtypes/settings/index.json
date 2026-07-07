@@ -27,7 +27,7 @@
                 "select": null,
                 "allowTargetBlank": true,
                 "allowText": true,
-                "repeat": true
+                "repeat": false
               }
             },
             "label": {
