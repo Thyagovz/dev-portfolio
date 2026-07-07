@@ -8,6 +8,10 @@ export const load: PageServerLoad = async ({ params, fetch, cookies }) => {
 
   return {
     page,
+    title: page.data.meta_title,
+    meta_description: page.data.meta_description,
+    meta_title: page.data.meta_title || page.data.title,
+    meta_image: page.data.meta_image,
   };
 };
 

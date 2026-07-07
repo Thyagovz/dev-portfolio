@@ -12,11 +12,21 @@
           "label": "UID"
         }
       },
+      "title": {
+        "type": "Text",
+        "config": {
+          "label": "Title",
+          "placeholder": ""
+        }
+      },
       "slices": {
         "type": "Slices",
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
+            "content_index": {
+              "type": "SharedSlice"
+            },
             "experience": {
               "type": "SharedSlice"
             },
@@ -61,17 +71,6 @@
           "thumbnails": []
         },
         "type": "Image"
-      }
-    },
-    "Content": {
-      "title": {
-        "type": "StructuredText",
-        "config": {
-          "label": "Title",
-          "placeholder": "",
-          "allowTargetBlank": true,
-          "single": "paragraph,heading1"
-        }
       }
     }
   }

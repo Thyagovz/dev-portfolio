@@ -9,6 +9,10 @@
       "type": "page",
       "uid": "home",
       "path": "/"
+    },
+    {
+      "type": "blogpost",
+      "path": "/blog/:uid"
     }
   ]
 }
