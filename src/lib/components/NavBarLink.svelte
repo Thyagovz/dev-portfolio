@@ -11,13 +11,13 @@
   }: {
     field: LinkField;
     label: KeyTextField;
-    onLinkClick: (event: MouseEvent) => void;
+    onLinkClick: () => void;
     type: "desktop" | "mobile";
   } = $props();
 
   const path = $derived(asLink(field));
-
-  let isActive = $derived(!!path && page.url.pathname.includes(path));
+  
+  let isActive = $derived(!!path && page.url.pathname === path);
 </script>
 
 {#if type === "desktop"}

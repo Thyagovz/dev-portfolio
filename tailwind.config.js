@@ -4,9 +4,10 @@ export default {
     "./src/**/*.{html,js,svelte,ts}",
     "./src/**/*.{svelte,js,ts}",
     "./index.html",
+    "./node_modules/@prismicio/svelte/dist/**/*.js"
   ],
   theme: {
     extend: {},
   },
-  plugins: [],
+  plugins: [require("@tailwindcss/typography")],
 };

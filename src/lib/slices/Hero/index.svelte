@@ -51,7 +51,7 @@
         y: 0,
         duration: 1,
         scale: 1,
-        ease: "elastic.out(1,0.3",
+        ease: "elastic.out(1,0.3)",
       },
     );
   });

@@ -1,0 +1,61 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"heading": {
+				"__TYPE__": "FieldContent",
+				"value": "earlier",
+				"type": "Text"
+			},
+			"description": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "In officia excepteur ea pariatur minim pariatur irure tempor eu anim do qui est Lorem exercitation. Voluptate elit commodo id eiusmod. Ex duis sunt tempor dolor minim eu cupidatat."
+						}
+					}
+				]
+			},
+			"button_label": {
+				"__TYPE__": "FieldContent",
+				"value": "bottle",
+				"type": "Text"
+			},
+			"button_link": {
+				"key": "9eba946f-2e44-4bf9-832e-779bd7779015",
+				"__TYPE__": "LinkContent",
+				"value": {
+					"__TYPE__": "ExternalLink",
+					"url": "http://google.com",
+					"text": "walk"
+				}
+			},
+			"avatar": {
+				"__TYPE__": "ImageContent",
+				"origin": {
+					"id": "main",
+					"url": "https://images.unsplash.com/photo-1587905069134-008460d7a636",
+					"width": 3935,
+					"height": 5894
+				},
+				"url": "https://images.unsplash.com/photo-1587905069134-008460d7a636?rect=0%2C980%2C3935%2C3935&w=597&h=597",
+				"width": 597,
+				"height": 597,
+				"edit": {
+					"zoom": 1,
+					"crop": {
+						"x": 0,
+						"y": 980
+					},
+					"background": "transparent"
+				},
+				"alt": "went",
+				"thumbnails": {}
+			}
+		},
+		"items": []
+	}
+]

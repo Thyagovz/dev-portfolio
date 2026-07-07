@@ -17,6 +17,12 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
+            "rich_text": {
+              "type": "SharedSlice"
+            },
+            "biography": {
+              "type": "SharedSlice"
+            },
             "hero": {
               "type": "SharedSlice"
             }
@@ -49,6 +55,17 @@
           "thumbnails": []
         },
         "type": "Image"
+      }
+    },
+    "Content": {
+      "title": {
+        "type": "StructuredText",
+        "config": {
+          "label": "Title",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "single": "paragraph,heading1"
+        }
       }
     }
   }
