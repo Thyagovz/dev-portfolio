@@ -66,6 +66,104 @@ type ContentRelationshipFieldWithData<
   >;
 }[Exclude<TCustomType[number], string>["id"]];
 
+type BlogpostDocumentDataSlicesSlice = RichTextSlice;
+
+/**
+ * Content for BlogPost documents
+ */
+interface BlogpostDocumentData {
+  /**
+   * Title field in *BlogPost*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: blogpost.title
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  title: prismic.KeyTextField;
+
+  /**
+   * Date field in *BlogPost*
+   *
+   * - **Field Type**: Date
+   * - **Placeholder**: *None*
+   * - **API ID Path**: blogpost.date
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/fields/date
+   */
+  date: prismic.DateField;
+
+  /**
+   * Hover Image field in *BlogPost*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: blogpost.hover_image
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/fields/image
+   */
+  hover_image: prismic.ImageField<never>;
+
+  /**
+   * Slice Zone field in *BlogPost*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: blogpost.slices[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/slices
+   */
+  slices: prismic.SliceZone<BlogpostDocumentDataSlicesSlice>; /**
+   * Meta Title field in *BlogPost*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A title of the page used for social media and search engines
+   * - **API ID Path**: blogpost.meta_title
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  meta_title: prismic.KeyTextField;
+
+  /**
+   * Meta Description field in *BlogPost*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A brief summary of the page
+   * - **API ID Path**: blogpost.meta_description
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  meta_description: prismic.KeyTextField;
+
+  /**
+   * Meta Image field in *BlogPost*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: blogpost.meta_image
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/fields/image
+   */
+  meta_image: prismic.ImageField<never>;
+}
+
+/**
+ * BlogPost document from Prismic
+ *
+ * - **API ID**: `blogpost`
+ * - **Repeatable**: `true`
+ * - **Documentation**: https://prismic.io/docs/content-modeling
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type BlogpostDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithUID<
+    Simplify<BlogpostDocumentData>,
+    "blogpost",
+    Lang
+  >;
+
 type PageDocumentDataSlicesSlice =
   ExperienceSlice | TechListSlice | RichTextSlice | BiographySlice | HeroSlice;
 
@@ -142,15 +240,15 @@ export type PageDocument<Lang extends string = string> =
  */
 interface RichtextDocumentData {
   /**
-   * Title field in *RichText*
+   * RichText field in *RichText*
    *
    * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: richtext.title
+   * - **API ID Path**: richtext.richtext
    * - **Tab**: Main
    * - **Documentation**: https://prismic.io/docs/fields/rich-text
    */
-  title: prismic.RichTextField;
+  richtext: prismic.RichTextField;
 }
 
 /**
@@ -342,7 +440,7 @@ export type SettingsDocument<Lang extends string = string> =
   >;
 
 export type AllDocumentTypes =
-  PageDocument | RichtextDocument | SettingsDocument;
+  BlogpostDocument | PageDocument | RichtextDocument | SettingsDocument;
 
 /**
  * Primary content in *Biography → Default → Primary*
@@ -602,14 +700,14 @@ export type HeroSlice = prismic.SharedSlice<"hero", HeroSliceVariation>;
  */
 export interface RichTextSliceDefaultPrimary {
   /**
-   * Title field in *RichText → Default → Primary*
+   * RichText field in *RichText → Default → Primary*
    *
    * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: rich_text.default.primary.title
+   * - **API ID Path**: rich_text.default.primary.richtext
    * - **Documentation**: https://prismic.io/docs/fields/rich-text
    */
-  title: prismic.RichTextField;
+  richtext: prismic.RichTextField;
 }
 
 /**
@@ -743,6 +841,9 @@ declare module "@prismicio/client" {
 
   namespace Content {
     export type {
+      BlogpostDocument,
+      BlogpostDocumentData,
+      BlogpostDocumentDataSlicesSlice,
       PageDocument,
       PageDocumentData,
       PageDocumentDataSlicesSlice,

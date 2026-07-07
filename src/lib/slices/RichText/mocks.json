@@ -3,13 +3,13 @@
 		"__TYPE__": "SharedSliceContent",
 		"variation": "default",
 		"primary": {
-			"title": {
+			"richtext": {
 				"__TYPE__": "StructuredTextContent",
 				"value": [
 					{
 						"type": "paragraph",
 						"content": {
-							"text": "Ullamco esse qui velit dolore laboris id irure ut sit est ea officia. Reprehenderit ullamco amet eiusmod qui ex enim veniam adipisicing id consequat ad ad occaecat velit elit."
+							"text": "Aliquip cupidatat incididunt irure est aute enim cupidatat qui dolor veniam eiusmod aliqua ullamco. Do magna voluptate non consequat esse laborum nostrud dolor quis commodo velit. Enim sit qui excepteur excepteur mollit ad consectetur ex mollit."
 						}
 					}
 				]
