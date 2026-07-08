@@ -1,24 +1,25 @@
-import type { Client, Content, SliceMapper } from "@prismicio/client";
+import type { Client, Content, SliceMapper } from '@prismicio/client';
 
 type Context = { client: Client<Content.AllDocumentTypes> };
 
 type ContentIndexCustomProps = {
-  items: Content.BlogpostDocument[] | Content.ProjectDocument[];
+	items: Content.BlogpostDocument[] | Content.ProjectDocument[];
 };
 
 const mapper: SliceMapper<
-  Content.ContentIndexSlice,
-  ContentIndexCustomProps,
-  Context
+	any, 
+	ContentIndexCustomProps,
+	Context
 > = async ({ slice, context }) => {
-  const { client } = context;
+	const { client } = context;
 
-  const items =
-    slice.primary.content_type === "Blog"
-      ? await client.getAllByType("blogpost")
-      : await client.getAllByType("project");
+	const items =
+		slice.primary.content_type === 'Blog'
+			? await client.getAllByType('blogpost')
+			: await client.getAllByType('project');
 
-  return { slice, items };
+	return { slice, items };
 };
 
 export default mapper;
+
