@@ -8,6 +8,10 @@ export const load: PageServerLoad = async ({ params, fetch, cookies }) => {
 
   return {
     page,
+    title: page.data.title,
+    meta_description: page.data.meta_description,
+    meta_title: page.data.meta_title || page.data.title,
+    meta_image: page.data.meta_image.url,
   };
 };
 
@@ -16,7 +20,9 @@ export const entries: EntryGenerator = async () => {
 
   const pages = await client.getAllByType("project");
 
-  return pages.map((page) => {
-    return { uid: page.uid };
-  });
+  return pages
+    .filter((page): page is typeof page & { uid: string } => page.uid !== null)
+    .map((page) => {
+      return { uid: page.uid };
+    });
 };
