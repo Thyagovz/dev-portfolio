@@ -56,25 +56,27 @@
         <PrismicLink
           field={settings.data.github_link}
           class="p-2 text-2xl text-slate-300 transform transition-all duration-150 hover:scale-125 hover:text-yellow-400"
-          aria-label={settings.data.name + "on Github"}
+          aria-label={settings.data.name + " on GitHub"}
         >
           <IconGithub />
         </PrismicLink>
       {/if}
+
       {#if isFilled.link(settings.data.linkedin_link)}
         <PrismicLink
-          field={settings.data.github_link}
+          field={settings.data.linkedin_link}
           class="p-2 text-2xl text-slate-300 transform transition-all duration-150 hover:scale-125 hover:text-yellow-400"
-          aria-label={settings.data.name + "on Github"}
+          aria-label={settings.data.name + " on LinkedIn"}
         >
           <IconLinkedin />
         </PrismicLink>
       {/if}
+
       {#if isFilled.link(settings.data.instagram_link)}
         <PrismicLink
-          field={settings.data.github_link}
+          field={settings.data.instagram_link}
           class="p-2 text-2xl text-slate-300 transform transition-all duration-150 hover:scale-125 hover:text-yellow-400"
-          aria-label={settings.data.name + "on Github"}
+          aria-label={settings.data.name + " on Instagram"}
         >
           <IconInstagram />
         </PrismicLink>
