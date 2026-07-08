@@ -1,29 +1,24 @@
-import type { Client, Content, SliceMapper } from '@prismicio/client';
-import type { SliceComponentProps } from '@prismicio/svelte';
-
-import ContentIndex from './index.svelte';
+import type { Client, Content, SliceMapper } from "@prismicio/client";
 
 type Context = { client: Client<Content.AllDocumentTypes> };
 
+type ContentIndexCustomProps = {
+  items: Content.BlogpostDocument[] | Content.ProjectDocument[];
+};
+
 const mapper: SliceMapper<
-	Content.ContentIndexSlice,
-	SliceComponentProps<Content.ContentIndexSlice> & { items: any },
-	Context
-> = async ({ slice, index, slices, context }) => {
-	const { client } = context;
+  Content.ContentIndexSlice,
+  ContentIndexCustomProps,
+  Context
+> = async ({ slice, context }) => {
+  const { client } = context;
 
-	const items =
-		slice.primary.content_type === 'Blog'
-			? await client.getAllByType('blogpost')
-			: await client.getAllByType('project');
+  const items =
+    slice.primary.content_type === "Blog"
+      ? await client.getAllByType("blogpost")
+      : await client.getAllByType("project");
 
-	return { 
-		slice,
-		index,
-		slices,
-		context,
-		items
-	};
+  return { slice, items };
 };
 
 export default mapper;
