@@ -1,42 +1,66 @@
-# sv
+# Dev Portfolio
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
+Uma plataforma de portfólio de alto impacto que combina engenharia frontend moderna com design generativo e experiências
+interativas 3D. O projeto foca em performance, fluidez de interface e entrega de conteúdo dinâmico.
 
-## Creating a project
+## Stack Tecnológica
 
-If you're seeing this, you've probably already done this step. Congrats!
+### Core Framework & Linguagem
 
-```sh
-# create a new project
-npx sv create my-app
-```
+* **SvelteKit (v2):** Framework meta-framework para Svelte que gerencia roteamento, renderização no servidor (SSR) e
+  otimização de assets, garantindo uma experiência de usuário rápida e reativa.
+* **TypeScript:** Utilizado em todo o projeto para garantir robustez técnica, tipagem estática e facilitar a manutenção
+  do código através de contratos de dados claros.
 
-To recreate this project with the same configuration:
+### Renderização 3D & Animação
 
-```sh
-# recreate this project
-npx sv@0.16.2 create --template minimal --types ts --install npm .
-```
+* **Threlte (Three.js para Svelte):** Integração declarativa do Three.js no ecossistema Svelte. Responsável pela
+  renderização de cenas 3D interativas, utilizando iluminação baseada em ambiente (HDR) e sombras de contato para alto
+  realismo.
+* **GSAP (GreenSock Animation Platform):** Motor de animação principal, utilizado para orquestrar sequências complexas e
+  interações refinadas que exigem precisão matemática e alta performance.
+* **GSAP ScrollTrigger:** Extensão para criação de experiências baseadas no scroll do usuário, permitindo o controle
+  granular do progresso de animações e transições de estado da interface.
 
-## Developing
+### Content Management & Styling
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+* **Prismic (Headless CMS):** Gerenciamento de conteúdo via API, permitindo atualizações dinâmicas sem necessidade de
+  novos deploys. Utiliza Slice Machine para desenvolvimento modular de componentes.
+* **Tailwind CSS:** Framework utilitário para estilização rápida e consistente, permitindo uma arquitetura de CSS
+  escalável e otimizada via PostCSS.
 
-```sh
+## Funcionalidades Principais
+
+* **Experiência Interativa 3D:** Cenas imersivas com geometrias procedurais e interações em tempo real baseadas no
+  movimento do cursor.
+* **Motion Design Avançado:** Animações fluidas integradas ao ciclo de vida dos componentes e disparadas por eventos de
+  scroll.
+* **Texturas Dinâmicas:** Uso de elementos visuais avançados e processamento de imagens para criar profundidade e
+  texturização moderna.
+* **Gerenciamento de Estado Reativo:** Aproveitamento das *Runes* do Svelte 5 para um fluxo de dados eficiente e
+  previsível.
+* **Arquitetura Baseada em Slices:** Desenvolvimento modular que permite a composição flexível de páginas através do
+  CMS.
+
+## Instalação e Execução
+
+Certifique-se de ter o [Node.js](https://nodejs.org/) instalado.
+
+```bash
+# Instalar dependências
+npm install
+
+# Iniciar servidor de desenvolvimento
 npm run dev
 
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
-
-## Building
-
-To create a production version of your app:
-
-```sh
+# Gerar build de produção
 npm run build
 ```
 
-You can preview the production build with `npm run preview`.
+## Observações
 
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
+Este projeto foi desenvolvido com foco em *Creative Development*, explorando os limites do que é possível realizar em
+navegadores modernos com foco em performance e estética minimalista.
+
+---
+Desenvolvido por [Thyago Euclides](https://www.linkedin.com/in/thyagovz/)
