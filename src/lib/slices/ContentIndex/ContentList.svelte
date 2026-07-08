@@ -9,7 +9,8 @@
 	import { PrismicLink } from '@prismicio/svelte';
 	import { gsap } from 'gsap';
 	import type { Action } from 'svelte/action';
-	import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
+	import { ScrollTrigger } from "gsap/ScrollTrigger";
+
 
 	import IconArrow from '~icons/ic/baseline-arrow-outward';
 

@@ -25,12 +25,9 @@
   let visible = $state(false);
 
 const materialParams = [
-  { color: 0x2ecc71, roughness: 0, metalness: 1 },
+  { color: 0x5c0612, roughness: 0, metalness: 1 },
   { color: 0xf1c40f, roughness: 0, metalness: 1 }, 
   { color: 0xe74c3c, roughness: 0, metalness: 1 }, 
-  { color: 0x8e44ad, roughness: 0, metalness: 1 }, 
-  { color: 0x1abc9c, roughness: 0, metalness: 1 },
-  { color: 0x2980b9, roughness: 0, metalness: 1 }, 
   { color: 0x2c3e50, roughness: 0, metalness: 1 } 
 ];
 
