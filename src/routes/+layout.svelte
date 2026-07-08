@@ -4,11 +4,11 @@
   import { page } from "$app/state";
   import Footer from "$lib/components/Footer.svelte";
   import Header from "$lib/components/Header.svelte";
+  import type { Snippet } from "svelte"; 
   import type { LayoutData } from "./$types";
 
-  let { children, data }: { children: any; data: LayoutData } = $props();
+  let { children, data }: { children: Snippet; data: LayoutData } = $props();
 
-  // 💡 Deriva os metadados reativamente a partir de page.data seguindo a estrutura do Prismic
   let titleText = $derived(
     page.data?.page?.data?.meta_title || page.data?.page?.data?.title || "Thyago Euclides | Portfolio"
   );
@@ -19,7 +19,7 @@
   );
 
   let metaImage = $derived(
-    page.data?.page?.data?.meta_image?.url || null
+    page.data?.page?.data?.meta_image?.url || ""
   );
 </script>
 
@@ -45,10 +45,9 @@
   {@render children()}
 </main>
 
-<div class="background-gradient absolute inset-0 -z-50 max-h-screen" />
-<div
-  class="pointer-events-none absolute inset-0 -z-40 h-full bg-[url('noisetexture.jpg')] opacity-20 mix-blend-soft-light"
-></div>
+<div class="background-gradient absolute inset-0 -z-50 max-h-screen"></div>
+<div class="pointer-events-none absolute inset-0 -z-40 h-full bg-[url('noisetexture.jpg')] opacity-20 mix-blend-soft-light"></div>
 
 <Footer settings={data.settings} />
+
 

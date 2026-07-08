@@ -1,11 +1,10 @@
 import { mapSliceZone } from '@prismicio/client';
-import type { PageLoad, EntryGenerator } from './$types'; // Usando PageLoad
+import type { PageServerLoad, EntryGenerator } from './$types'; 
 import { createClient } from '$lib/prismicio';
 import { mappers } from '$lib/slices/mappers';
 
-export const load: PageLoad = async ({ params, fetch }) => {
-	// Em +page.ts, removemos o parâmetro 'cookies' para o TypeScript parar de quebrar
-	const client = createClient({ fetch }); 
+export const load: PageServerLoad = async ({ params, fetch, cookies }) => {
+	const client = createClient({ fetch, cookies }); 
 
 	const page = await client.getByUID('page', params.uid);
 	const slices = await mapSliceZone(page.data.slices, mappers, { client });
@@ -23,12 +22,12 @@ export const entries: EntryGenerator = async () => {
 	const client = createClient();
 	const pages = await client.getAllByType('page');
 
-	return pages
-		.filter((page) => page.uid !== null)
-		.map((page) => ({
-			uid: page.uid as string
-		}));
+	const validPages = pages.filter((page): page is typeof page & { uid: string } => {
+		return typeof page.uid === 'string';
+	});
+
+	return validPages.map((page) => ({
+		uid: page.uid
+	}));
 };
-
-
 
