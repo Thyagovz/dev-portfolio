@@ -75,7 +75,7 @@
           aria-label={slice.primary.first_name + " " + slice.primary.last_name}
         >
           {#if first_name_letters.length && last_name_letters.length}
-            <span class="relative z-10 block text-slate-300">
+            <span class="block text-slate-300">
               {#each first_name_letters as letter}
                 <span class="name-animation inline-block opacity-100"
                   >{letter}</span
@@ -83,7 +83,7 @@
               {/each}
             </span>
             <span
-              class="relative z-0 block text-slate-500 text-[0.89em] -mt-[.12em] ml-[0.17ch]"
+              class="block text-slate-500 mt-[.03em] "
             >
               {#each last_name_letters as letter}
                 <span class="name-animation inline-block opacity-0"
@@ -94,7 +94,7 @@
           {/if}
         </h1>
         <span
-          class="job-title ml-[.9ch] block bg-gradient-to-tr from-yellow-500 via-yellow-200 to-yellow-500 bg-clip-text text-transparent text-2xl font-bold uppercase tracking-[.2em] md:text-4xl opacity-0"
+          class="job-title ml-[.5ch] block bg-gradient-to-tr from-yellow-500 via-yellow-200 to-yellow-500 bg-clip-text text-transparent text-2xl font-bold uppercase tracking-[.2em] md:text-4xl opacity-0"
         >
           {slice.primary.tag_line}
         </span>
