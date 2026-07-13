@@ -94,7 +94,7 @@
           {/if}
         </h1>
         <span
-          class="job-title ml-[.5ch] block bg-gradient-to-tr from-yellow-500 via-yellow-200 to-yellow-500 bg-clip-text text-transparent text-2xl font-bold uppercase tracking-[.2em] md:text-4xl opacity-0"
+          class="job-title ml-[.2ch] block bg-gradient-to-tr from-yellow-500 via-yellow-200 to-yellow-500 bg-clip-text text-transparent text-2xl font-bold uppercase tracking-[.2em] md:text-4xl opacity-0"
         >
           {slice.primary.tag_line}
         </span>
