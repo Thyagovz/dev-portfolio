@@ -3,7 +3,6 @@
 	import { components } from "$lib/slices";
 
 	let { data } = $props();
-	$inspect(data.slices);
 </script>
 
 <SliceZone slices={data.slices} {components} />
