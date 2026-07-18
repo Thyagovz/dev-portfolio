@@ -1,5 +1,7 @@
 # Dev Portfolio
 
+#### Video Demo: https://youtu.be/IXBiu-86xBg
+
 Uma plataforma de portfólio de alto impacto que combina engenharia frontend moderna com design generativo e experiências interativas 3D. O projeto foca em performance, fluidez de interface, otimização de renderização gráfica e entrega de conteúdo dinâmico de forma totalmente assíncrona. Ele foi concebido para desafiar os limites tradicionais de portfólios estáticos e aplicar conceitos profundos de arquitetura de software aplicados à computação visual na web.
 
 ## Stack Tecnológica
